@@ -6,7 +6,7 @@ do_merge_indat_map_glc <- function(
     , 
     indat_glc_api_i = indat_glc_api
 ){
-  xy <- st_as_sf(indat_glc_api_i, coords = c("lon", "lat"), crs = 4326)
+  xy <- st_as_sf(indat_glc_api_i, coords = c("Lon", "Lat"), crs = 4326)
   xy <- st_transform(xy, crs = "epsg:3577")
   #outdat <- extract(indat_i, xy)
   return(xy)
