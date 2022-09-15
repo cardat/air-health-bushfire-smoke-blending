@@ -10,7 +10,7 @@ time_todo <- times_todo[i]
 # If you do not provide the “time” parameter, it will return the latest reading
 # This will retrieve the most recent reading in an 80-minute window prior to the given time
 # Window greater than an hour is used because if we do *exactly* an hour, we may miss data that takes some time
-# to acquire from eg. the horrible NSW API
+# to acquire from eg. the NSW API
 # Stations with no data reporting will not be returned.
 res <- POST('https://maps.aqvx.app/smoketrack/get_all_monitor',body = list(time=time_todo, key = pwd),encode="json")
 
