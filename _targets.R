@@ -7,7 +7,8 @@ sapply(list.files(pattern="[.]R$", path = "R/", full.names = T), source)
 
 ## datadir <- "/hdd/287658c/DATADRIVE0" 
 ## datadir <- "/media/287658c/DATADRIVE0"
-datadir <- "C:/Users/287658C"
+datadir <- "/hdd"
+#datadir <- "#C:/Users/287658C"
 
 #### API Key ####
 api_key <- readIniFile("api.ini", aslist = T)
