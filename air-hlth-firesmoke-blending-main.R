@@ -21,3 +21,9 @@ outdir <- dirname(outfile)
 b2@data@names <- "pm25_pred"
 raster::writeRaster(b2, "data_derived/CarFireSmoke_20200101.nc", overwrite = T)
 paste0("cp data_derived/CarFireSmoke_20200101.nc ",outfile)
+
+
+tar_load(dat_mrg_models_and_obs)
+dat_mrg_models_and_obs
+with(dat_mrg_models_and_obs,plot(layer, PM25, xlim = c(0,200), ylim = c(0,200)))
+abline(0,1)
