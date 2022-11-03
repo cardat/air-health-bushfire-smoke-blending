@@ -5,9 +5,9 @@ library(targets)
 
 sapply(list.files(pattern="[.]R$", path = "R/", full.names = T), source)
 
-## datadir <- "/hdd/287658c/DATADRIVE0" 
+datadir <- "/hdd" 
 ## datadir <- "/media/287658c/DATADRIVE0"
-datadir <- "C:/Users/287658C"
+## datadir <- "C:/Users/287658C"
 
 #### API Key ####
 api_key <- readIniFile("api.ini", aslist = T)
@@ -19,7 +19,7 @@ list(
   #### model 1 ####
   tar_target(
     infile_path_model1, 
-    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox/asdaf20010101.nc"),
+    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox_test/CarFireSmoke_20200101.nc"),
     format = "file"
   ),
   tar_target(
@@ -35,7 +35,7 @@ list(
   #### model 2 ####
   tar_target(
     infile_path_model2, 
-    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox/asdaf20010101.nc"),
+    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox_test/CarFireSmoke_20200101.nc"),
     format = "file"
   ),
   tar_target(
@@ -92,7 +92,7 @@ list(
              ),
   #### combine BME with offset ####
   tar_target(outdat_bme,
-             do_outdat_bne(dat_global_offset, dat_bme)
+             do_outdat_bme(dat_global_offset, dat_bme)
              )
   
 )

@@ -1,6 +1,6 @@
 ## times_todo = paste0("2020-01-01T",sprintf("%02d",1:24),":00:00Z")
 
-load_infile_glc_api2 <- function(times_todo){
+load_infile_observations_api2 <- function(times_todo){
 dat_out <- list()
 for(i in 1:length(times_todo)){
 # i=1

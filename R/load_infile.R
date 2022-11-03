@@ -1,7 +1,8 @@
-## datadir <- "/hdd/287658c/DATADRIVE0" 
+## datadir <- "/hdd" 
 ## datadir <- "/media/287658c/DATADRIVE0"
 ## datadir <- "C:/Users/287658C"
-## infile_path = file.path(datadir, "projects/Car_FireSmoke_1_2/inbox/asdaf20010101.nc")
+## infile_path = file.path(datadir, "projects/Car_FireSmoke_1_2/inbox_test/CarFireSmoke_20200101.nc")
+
 load_infile <- function(
     indir=dirname(infile_path)
     ,
