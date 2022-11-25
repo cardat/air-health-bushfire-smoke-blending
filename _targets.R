@@ -6,6 +6,9 @@ library(targets)
 sapply(list.files(pattern="[.]R$", path = "R/", full.names = T), source)
 
 datadir <- "/hdd" 
+## e.g. CSIRO_20200110_09.nc
+infile_models <- dir(file.path(datadir, "projects/Car_FireSmoke_1_2/inbox"), full.names = T)
+infile_model1 <- infile_models[grep("CSIRO",infile_models)]
 ## datadir <- "/media/287658c/DATADRIVE0"
 ## datadir <- "C:/Users/287658C"
 
@@ -19,7 +22,7 @@ list(
   #### model 1 ####
   tar_target(
     infile_path_model1, 
-    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox_test/CarFireSmoke_20200101.nc"),
+    infile_model1,
     format = "file"
   ),
   tar_target(
@@ -35,7 +38,7 @@ list(
   #### model 2 ####
   tar_target(
     infile_path_model2, 
-    file.path(datadir, "projects/Car_FireSmoke_1_2/inbox_test/CarFireSmoke_20200101.nc"),
+    infile_model1,
     format = "file"
   ),
   tar_target(
